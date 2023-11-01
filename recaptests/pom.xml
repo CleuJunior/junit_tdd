@@ -13,6 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>19</java.version>
+    <junit.version>5.9.2</junit.version>
     <maven.compiler.target>19</maven.compiler.target>
     <maven.compiler.source>19</maven.compiler.source>
     <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
@@ -22,7 +23,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.9.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -37,6 +38,11 @@
           <target>${java.version}</target>
         </configuration>
         <version>${maven.compiler.plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M9</version>
       </plugin>
     </plugins>
   </build>
