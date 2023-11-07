@@ -37,18 +37,19 @@ public class Person implements Serializable {
     @Column(nullable = false, length = 100)
     private String email;
 
-    public Person() {}
+    public Person() {
+	}
+
+	public Person(Long id, String firstName, String lastName, String email, String address, String gender) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.gender = gender;
+		this.email = email;
+	}
 
     public Person(String firstName, String lastName, String email, String address, String gender) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.gender = gender;
-        this.email = email;
-    }
-
-    public Person(Long id, String firstName, String lastName, String email, String address, String gender) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
